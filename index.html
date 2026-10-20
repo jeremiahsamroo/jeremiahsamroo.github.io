@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeremiah Romagnoli</title>
+<meta name="description" content="Jeremiah Romagnoli — Princeton economics graduate working in causal inference, econometrics, and applied data science.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231d4ed8'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='system-ui,sans-serif' font-weight='600'>JR</text></svg>">
+
+<!-- ============================================================
+     SITE CONFIG — fill in your own details here
+     - GITHUB_URL:  your GitHub profile (currently a placeholder)
+     - LINKEDIN_URL: verify this matches your real profile URL
+     ============================================================ -->
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #5c5c5c;
+    --faint: #8a8a8a;
+    --line: #e6e6e6;
+    --accent: #1d4ed8;
+    --accent-soft: #eff4ff;
+    --maxw: 720px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 16.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---- layout ---- */
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  section { padding: 56px 0 8px; scroll-margin-top: 72px; }
+  section:last-of-type { padding-bottom: 72px; }
+
+  /* ---- nav ---- */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px; padding-top: 0; padding-bottom: 0;
+  }
+  nav .brand { font-weight: 700; color: var(--ink); font-size: 17px; }
+  nav .brand:hover { text-decoration: none; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; }
+  nav li a { color: var(--muted); font-size: 15px; }
+  nav li a:hover { color: var(--ink); text-decoration: none; }
+
+  /* ---- hero ---- */
+  header.hero { padding: 84px 0 24px; }
+  header.hero h1 {
+    font-size: 40px; line-height: 1.15; margin: 0 0 10px;
+    letter-spacing: -0.5px; font-weight: 700;
+  }
+  header.hero .tagline { font-size: 19px; color: var(--muted); margin: 0 0 22px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px 20px; font-size: 15.5px; }
+
+  /* ---- sections ---- */
+  h2 {
+    font-size: 13px; font-weight: 700; letter-spacing: 1.6px;
+    text-transform: uppercase; color: var(--faint);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px; margin: 0 0 26px;
+  }
+  h3 { font-size: 19px; margin: 0 0 4px; font-weight: 650; }
+  h3 a { color: var(--ink); }
+  .meta { color: var(--faint); font-size: 14.5px; margin: 0 0 10px; }
+  p { margin: 0 0 16px; }
+  .lede { font-size: 18px; }
+
+  /* ---- projects ---- */
+  .project { margin-bottom: 38px; }
+  .project:last-child { margin-bottom: 0; }
+  .tag {
+    display: inline-block; font-size: 12.5px; font-weight: 600;
+    color: var(--accent); background: var(--accent-soft);
+    border-radius: 999px; padding: 2px 11px; margin-left: 10px;
+    vertical-align: 2px; white-space: nowrap;
+  }
+  .project p, .cv-entry p { color: #333; }
+
+  /* ---- CV ---- */
+  .cv-block { margin-bottom: 36px; }
+  .cv-block:last-child { margin-bottom: 0; }
+  .cv-entry { margin-bottom: 26px; }
+  .cv-entry:last-child { margin-bottom: 0; }
+  .cv-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .cv-head .role { font-weight: 650; }
+  .cv-head .when { color: var(--faint); font-size: 14.5px; white-space: nowrap; }
+  .cv-entry ul { margin: 8px 0 0; padding-left: 20px; color: #333; }
+  .cv-entry li { margin-bottom: 6px; }
+  .cv-entry li::marker { color: var(--faint); }
+  .skills-grid { display: grid; grid-template-columns: 130px 1fr; gap: 8px 16px; }
+  .skills-grid dt { font-weight: 650; font-size: 15px; }
+  .skills-grid dd { margin: 0; color: #333; font-size: 15px; }
+  .btn {
+    display: inline-block; margin-top: 28px; padding: 11px 22px;
+    border: 1px solid var(--accent); border-radius: 8px;
+    color: var(--accent); font-weight: 600; font-size: 15.5px;
+  }
+  .btn:hover { background: var(--accent-soft); text-decoration: none; }
+
+  /* ---- contact ---- */
+  .contact-list { list-style: none; margin: 0; padding: 0; }
+  .contact-list li { margin-bottom: 12px; }
+  .contact-list .label { display: inline-block; width: 84px; color: var(--faint); font-size: 14.5px; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    color: var(--faint); font-size: 14px; padding: 28px 0 40px;
+  }
+
+  @media (max-width: 560px) {
+    header.hero { padding: 56px 0 16px; }
+    header.hero h1 { font-size: 32px; }
+    section { padding-top: 44px; }
+    nav ul { gap: 14px; }
+    nav li a { font-size: 14px; }
+    .cv-head { flex-direction: column; gap: 2px; }
+    .skills-grid { grid-template-columns: 1fr; gap: 2px 0; }
+    .skills-grid dd { margin-bottom: 10px; }
+  }
+  @media print {
+    nav, .btn, footer { display: none; }
+    section { padding: 24px 0 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Jeremiah Romagnoli</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+  <header class="hero">
+    <h1>Jeremiah Romagnoli</h1>
+    <p class="tagline">Economist and data scientist &middot; Princeton A.B. &rsquo;26</p>
+    <div class="links">
+      <a href="mailto:jr2593@alumni.princeton.edu">Email</a>
+      <a href="https://www.linkedin.com/in/jeremiah-r-553a62215">LinkedIn</a>
+      <a href="https://github.com/YOUR-USERNAME">GitHub</a>
+      <a href="cv.pdf">CV (PDF)</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="lede">I study markets and policy with data.</p>
+    <p>I&rsquo;m a recent Princeton graduate (A.B. Economics, &rsquo;26) working at the intersection of economics and data science. My training is in econometrics, causal inference, and statistical modeling, with a toolkit spanning Python, R, Stata, and SQL.</p>
+    <p>Right now I&rsquo;m building portfolio projects in applied causal inference &mdash; most recently a synthetic-control study of New York City&rsquo;s congestion pricing &mdash; and I&rsquo;m looking for analyst roles in New York: data analytics, economic consulting, risk, or trading. Outside of work I sail, follow jazz, and compete in prediction markets.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Did congestion pricing clear the tunnels?<span class="tag">In progress</span></h3>
+      <p class="meta">Causal inference &middot; synthetic control &middot; 2026</p>
+      <p>Estimating the effect of Manhattan&rsquo;s 2025 congestion pricing on tolled tunnel traffic. Built a daily panel from Port Authority crossing data and applied ridge-augmented synthetic control, with in-space and in-time placebo checks for inference. An exercise in honest measurement: the result depends on which donors you trust, so I&rsquo;m diagnosing that instead of declaring a headline.</p>
+    </div>
+
+    <div class="project">
+      <h3>Supply-side regulatory constraints and housing affordability</h3>
+      <p class="meta">Senior thesis, Princeton Economics &middot; 2025&ndash;2026</p>
+      <p>Decomposed the Wharton Land Use Regulatory Index into mechanism-specific sub-indices (density restrictions, supply restrictions, approval delays) and estimated their effects on housing affordability across U.S. metros using 15M+ ACS/IPUMS microdata observations &mdash; cross-sectional OLS with state fixed effects. Approval delays emerged as the binding margin; the index was treated throughout as a noisy proxy for true regulatory stringency, not an instrument.</p>
+    </div>
+
+    <div class="project">
+      <h3>Degree saturation and housing demand</h3>
+      <p class="meta">Junior paper, Princeton Economics &middot; 2025</p>
+      <p>Tested whether excess saturation of degree holders contributes to demand-pull increases in housing CPI. Built the analysis on CPS microdata in a difference-in-differences design with high-dimensional fixed effects and clustering variants.</p>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>Curriculum Vitae</h2>
+
+    <div class="cv-block">
+      <h3>Education</h3>
+      <div class="cv-entry">
+        <div class="cv-head">
+          <span class="role">Princeton University &mdash; A.B. Economics</span>
+          <span class="when">Sept 2021 &ndash; May 2026</span>
+        </div>
+        <p class="meta">Princeton, NJ</p>
+        <ul>
+          <li>Coursework: micro &amp; macro, econometrics and applications, market design, statistics, linear algebra, machine learning, data science, machine translation.</li>
+          <li>Activities: Chapel chorister &amp; undergraduate deacon, Sailing Team, E-Club, Elections Research Group treasurer, Model Congress staffer.</li>
+          <li>Selected as a student speaker at Opening Exercises for the Class of 2026.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-block">
+      <h3>Experience</h3>
+      <div class="cv-entry">
+        <div class="cv-head">
+          <span class="role">IT &amp; Accounts Intern &mdash; SciTec</span>
+          <span class="when">May 2021 &ndash; Aug 2021</span>
+        </div>
+        <p class="meta">Princeton, NJ</p>
+        <ul>
+          <li>Led a term-length audit of the firm&rsquo;s IT asset inventory; designed a repeatable census methodology that cut future audit lead times by ~50%, documented via Jira and Confluence.</li>
+          <li>Wrote Python scripts to collect, upload, and reconcile inventory data across offices, replacing a manual process.</li>
+          <li>Supported accounting operations with biweekly contract expenditure reports; evaluated enterprise software vendors for procurement.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-head">
+          <span class="role">Non-Profit Consulting Extern &mdash; PwC</span>
+          <span class="when">Jun 2022 &ndash; Aug 2022</span>
+        </div>
+        <p class="meta">Plainsboro Township, NJ</p>
+        <ul>
+          <li>Used deep research and consulting frameworks to analyze fundraising, stakeholder management, and impact measurement for a nonprofit client.</li>
+          <li>Built and delivered a client-facing presentation of data-driven insights and recommendations; chaired weekly extern focus groups.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-head">
+          <span class="role">College Application Advisor &amp; Tutor &mdash; MyMentor</span>
+          <span class="when">Aug 2021 &ndash; Dec 2023</span>
+        </div>
+        <p class="meta">Remote</p>
+        <ul>
+          <li>Advised domestic and international students through the U.S. college admissions process: application strategy, essay development, timelines, and school selection.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-block">
+      <h3>Research</h3>
+      <div class="cv-entry">
+        <div class="cv-head">
+          <span class="role">Senior Thesis &mdash; Dept. of Economics</span>
+          <span class="when">Sept 2025 &ndash; Apr 2026</span>
+        </div>
+        <p class="meta">Advised by Prof. Henrik Kleven</p>
+        <ul>
+          <li>&ldquo;Density Related Supply Side Regulatory Constraints and Housing Affordability in American Cities.&rdquo; 60-page independent empirical analysis with theoretical motivation, robustness checks, and data visualization.</li>
+          <li>Operationalized the WRLURI as a proxy for local regulatory stringency; cross-sectional OLS with state fixed effects on 15M+ ACS/IPUMS observations.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-head">
+          <span class="role">Junior Paper &mdash; Dept. of Economics</span>
+          <span class="when">Jan 2025 &ndash; Apr 2025</span>
+        </div>
+        <ul>
+          <li>Tested the hypothesis that excess saturation of degree holders contributes to demand-pull housing CPI increases, using CPS microdata in a DiD design.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-block">
+      <h3>Skills</h3>
+      <dl class="skills-grid">
+        <dt>Programming</dt><dd>Python (Pandas, NumPy, PyTorch, Keras), R (Tidyverse, Tidymodels, caret), Stata, SQL, IPUMS, ICPSR</dd>
+        <dt>Software</dt><dd>Office 365, Google Workspace, Jira, Confluence</dd>
+        <dt>Languages</dt><dd>German (professional working proficiency)</dd>
+      </dl>
+    </div>
+
+    <div class="cv-block">
+      <h3>Honors</h3>
+      <div class="cv-entry">
+        <ul>
+          <li>1st place, Princeton CISS Grand Strategy Simulation (Spring 2022); two 2nd-place finishes.</li>
+          <li>17th of 318 teams, Princeton Puzzles competition (2026).</li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="btn" href="cv.pdf">Download CV (PDF)</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li><span class="label">Email</span><a href="mailto:jr2593@alumni.princeton.edu">jr2593@alumni.princeton.edu</a></li>
+      <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/jeremiah-r-553a62215">linkedin.com/in/jeremiah-r-553a62215</a></li>
+      <li><span class="label">GitHub</span><a href="https://github.com/YOUR-USERNAME">github.com/YOUR-USERNAME</a></li>
+      <li><span class="label">Location</span>Plainsboro Township, NJ</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 Jeremiah Romagnoli &middot; Plain HTML &amp; CSS, no frameworks &middot; Last updated October 2026
+  </div>
+</footer>
+
+</body>
+</html>
