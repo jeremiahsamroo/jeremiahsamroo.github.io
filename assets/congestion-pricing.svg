@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f5f8ff"/>
+  <!-- donor crossings (gray) -->
+  <polyline points="90,430 300,415 510,438 700,420 910,432 1110,418" fill="none" stroke="#c9d2e0" stroke-width="7" stroke-linecap="round"/>
+  <polyline points="90,520 300,500 510,528 700,505 910,520 1110,498" fill="none" stroke="#d7dee9" stroke-width="7" stroke-linecap="round"/>
+  <polyline points="90,610 300,592 510,618 700,598 910,612 1110,590" fill="none" stroke="#c9d2e0" stroke-width="7" stroke-linecap="round"/>
+  <!-- intervention line -->
+  <line x1="700" y1="120" x2="700" y2="700" stroke="#1d4ed8" stroke-width="4" stroke-dasharray="14 12" opacity="0.55"/>
+  <text x="716" y="112" font-family="system-ui, sans-serif" font-size="34" fill="#1d4ed8">Jan 2025</text>
+  <!-- treated crossing (accent): flat, then drops -->
+  <polyline points="90,330 300,318 510,342 700,326 910,452 1110,470" fill="none" stroke="#1d4ed8" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1110" cy="470" r="15" fill="#1d4ed8"/>
+  <!-- tunnel arch -->
+  <path d="M430 900 v-90 a170 130 0 0 1 340 0 v90 z" fill="#e2eafb"/>
+  <path d="M490 900 v-70 a110 88 0 0 1 220 0 v70 z" fill="#ffffff"/>
+  <text x="90" y="806" font-family="system-ui, sans-serif" font-size="30" fill="#8a94a6">Daily tunnel crossings — treated vs. synthetic control</text>
+</svg>

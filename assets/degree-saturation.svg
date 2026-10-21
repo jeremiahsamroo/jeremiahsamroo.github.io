@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f5f8ff"/>
+  <!-- step bars: degree saturation -->
+  <rect x="120" y="600" width="150" height="180" rx="10" fill="#c7d6fb"/>
+  <rect x="310" y="520" width="150" height="260" rx="10" fill="#a9c2f9"/>
+  <rect x="500" y="440" width="150" height="340" rx="10" fill="#7ea3f6"/>
+  <rect x="690" y="360" width="150" height="420" rx="10" fill="#4f7ef2"/>
+  <rect x="880" y="290" width="150" height="490" rx="10" fill="#1d4ed8"/>
+  <line x1="90" y1="780" x2="1110" y2="780" stroke="#c9d2e0" stroke-width="6" stroke-linecap="round"/>
+  <!-- housing CPI line -->
+  <polyline points="120,560 340,505 560,430 780,350 1030,235" fill="none" stroke="#e07b39" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1030" cy="235" r="14" fill="#e07b39"/>
+  <text x="90" y="140" font-family="system-ui, sans-serif" font-size="34" fill="#33415c">Degree saturation vs. housing CPI</text>
+  <text x="120" y="842" font-family="system-ui, sans-serif" font-size="28" fill="#8a94a6">Share of degree holders, by metro</text>
+</svg>

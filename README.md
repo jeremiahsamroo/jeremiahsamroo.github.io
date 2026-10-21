@@ -1,34 +1,59 @@
 # Jeremiah Romagnoli — Personal Site
 
-A single-file static site. No build step, no dependencies.
+Plain HTML + one shared CSS file. No build step, no dependencies.
 
-## Before you push — two placeholders to fix
+## Site map
 
-1. **GitHub username.** Search `index.html` for `YOUR-USERNAME` (2 spots: hero links + contact) and replace with your real username.
-2. **LinkedIn URL.** It's currently `linkedin.com/in/jeremiah-r-553a62215`, taken from your resume PDF — double-check that's the exact slug.
-3. `cv.pdf` is a copy of the resume you already had on file (`Resume_J_174890_2__2___1___4.pdf`). If you update your resume, re-copy it over this file. The on-page CV section uses the "operationalized WRLURI as a proxy" wording you settled on (the PDF still says "instrumented").
+```
+index.html            Landing page: sidebar intro (photo, name, links) + About,
+                      Selected Experience, Projects, Contact
+style.css             All styling, shared by every page
+cv.html               Separate CV page — a live preview of cv.pdf
+cv.pdf                Your CV. Replace this file and cv.html updates itself.
+photo.jpg             (you add this) Your portrait — see below
+projects/
+  congestion-pricing.html
+  housing-regulation-thesis.html
+  degree-saturation.html
+assets/               Project preview images (SVG placeholders — swap in your
+                      own screenshots/charts anytime, same filenames)
+attachments/
+  senior-thesis.pdf   Linked from the thesis project page
+```
+
+## How to change things
+
+- **Your photo:** save a picture as `photo.jpg` in the site root (same folder
+  as `index.html`). It appears in the sidebar automatically. No photo yet?
+  A clean "JR" placeholder shows instead.
+- **CV:** the front page only carries a brief Selected Experience summary.
+  The full CV lives on `cv.html`, which embeds `cv.pdf` — just overwrite
+  `cv.pdf` with a newer resume export.
+- **Project images:** replace the files in `assets/` with real screenshots
+  or charts (keep the filenames, or update the `<img src>` in `index.html`
+  and the matching project page). JPG/PNG work too — just match the extension.
+- **Project attachments:** drop files in `attachments/` and link them from
+  the "Links & Attachments" list at the bottom of that project's page.
+  Each project page has an HTML comment showing the exact line to add.
+  The thesis page already links `attachments/senior-thesis.pdf`.
 
 ## Push to GitHub Pages
 
-**Option A — yourname.github.io (your main site):**
+The repo must be named `jeremiahsamroo.github.io` for the root URL
+`https://jeremiahsamroo.github.io/` (rename under repo Settings → General
+if yours is still named `jromagnoli.github.io`).
+
 ```bash
 cd daniel-portfolio
-git init
-git add index.html cv.pdf
-git commit -m "Personal site"
-git branch -M main
-git remote add origin git@github.com:YOUR-USERNAME/YOUR-USERNAME.github.io.git
-git push -u origin main
+git add .
+git commit -m "Sidebar layout, separate CV page, project pages"
+git push
 ```
-Then in the repo: **Settings → Pages → Deploy from branch → main → Save.**
-Your site goes live at `https://YOUR-USERNAME.github.io`.
 
-**Option B — a project repo (e.g. `portfolio`):**
+Then in the repo: **Settings → Pages → Deploy from branch → main → Save**
+(if Pages isn't already on).
 
-Same steps but remote is `git@github.com:YOUR-USERNAME/portfolio.git`;
-site goes live at `https://YOUR-USERNAME.github.io/portfolio`.
+## Still worth verifying
 
-## Updating later
-
-Everything lives in `index.html` — edit the About/Projects/CV/Contact sections
-directly, commit, push. Pages redeploys automatically.
+- **LinkedIn URL** is `linkedin.com/in/jeremiah-r-553a62215`, taken from your
+  resume PDF — double-check that's the exact slug.

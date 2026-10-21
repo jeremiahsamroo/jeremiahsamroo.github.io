@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Did congestion pricing clear the tunnels? — Jeremiah Romagnoli</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231d4ed8'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='system-ui,sans-serif' font-weight='600'>JR</text></svg>">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="simple-page">
+  <div class="topbar">
+    <a class="brand" href="../index.html">Jeremiah Romagnoli</a>
+    <nav>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../cv.html">CV</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+
+  <img class="project-hero" src="../assets/congestion-pricing.svg" alt="Chart preview: tunnel traffic before and after congestion pricing">
+
+  <h1>Did congestion pricing clear the tunnels?<span class="tag">In progress</span></h1>
+  <p class="meta">Causal inference &middot; synthetic control &middot; 2026</p>
+
+  <p>In January 2025, New York switched on congestion pricing for Manhattan below 60th Street. The obvious question &mdash; did tolled crossings actually carry less traffic? &mdash; is a causal question, and a hard one: the treated crossings are a handful of tunnels, there is no untreated Manhattan, and traffic was still normalizing post-pandemic.</p>
+
+  <p>I built a daily panel of crossings from Port Authority data (with a monthly MTA + Port Authority panel alongside it) and estimated the effect with ridge-augmented synthetic control, checking the result with in-space placebos (pretending each donor crossing was treated) and an in-time placebo (pretending pricing started a year early). The daily and monthly panels do not always agree, and the synthetic-control weights are concentrated enough that the answer is sensitive to which donors you trust &mdash; so the current stage of the project is diagnostics: identifying which donors drive the fit, and whether the placebo distribution really separates the treated unit from noise.</p>
+
+  <p>The point of the project is the discipline, not a headline number: pre-registering the donor pool, reporting the estimates that don&rsquo;t flatter the hypothesis, and saying plainly what the design can&rsquo;t identify &mdash; including the crossings for which no public data exists.</p>
+
+  <!-- ATTACHMENTS: to add a file, drop it in the attachments/ folder at the
+       site root and add a line like:
+       <li><a href="../attachments/my-file.pdf">My file (PDF)</a></li>
+       inside the list below, replacing the "coming soon" item. -->
+  <div class="attachments">
+    <h2>Links &amp; Attachments</h2>
+    <ul>
+      <li class="soon">Code repository &mdash; coming soon</li>
+      <li class="soon">Writeup (PDF) &mdash; coming soon</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
