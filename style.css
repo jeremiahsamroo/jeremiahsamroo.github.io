@@ -116,7 +116,9 @@ p { margin: 0 0 16px; }
   vertical-align: 2px; white-space: nowrap;
 }
 .project-card p { color: #333; }
-.read-more { font-weight: 600; font-size: 15.5px; }
+.card-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.btn-solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-solid:hover { background: #1740b8; color: #fff; }
 
 /* ---- contact ---- */
 .contact-list { list-style: none; margin: 0; padding: 0; }
