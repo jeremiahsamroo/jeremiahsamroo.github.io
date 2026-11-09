@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redfin home price prediction model — Jeremiah Romagnoli</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231d4ed8'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='system-ui,sans-serif' font-weight='600'>JR</text></svg>">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="simple-page">
+  <div class="topbar">
+    <a class="brand" href="../index.html">Jeremiah Romagnoli</a>
+    <nav>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../cv.html">CV</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+
+  <img class="project-hero" src="../assets/redfin-home-price.svg" alt="Chart preview: median price by zip-code group">
+
+  <h1>Redfin home price prediction model</h1>
+  <p class="meta">Independent project &middot; R &middot; 2025</p>
+
+  <p>How well can sale prices be predicted for houses in King County, Washington? This project builds a price-prediction model on ~21,600 King County home sales from May 2014 to May 2015, comparing ordinary least squares against lasso regression on log price, and testing the models on both an in-time random holdout and an out-of-time holdout of May 2015 sales.</p>
+
+  <p>The feature work is where most of the modeling lives. Instead of 70 separate zip-code dummies, zip codes are grouped into five price clusters with Fisher&ndash;Jenks natural breaks on median sale price, which keeps the geographic signal while cutting roughly 65 columns from the design matrix. A second feature captures a nonlinearity the data shows clearly: average log price falls once a house has 8 or more bedrooms, so the model includes a bedrooms-by-eight-plus interaction. The lasso is tuned by 10-fold cross-validation, with the champion penalty chosen by the one-standard-error rule.</p>
+
+  <p>The honest headline is that the lasso does not beat OLS here. At the one-standard-error penalty its test error runs slightly above OLS on both holdouts &mdash; with ~17,800 training rows against ~95 predictors, OLS barely overfits, so shrinkage buys almost no variance reduction while adding bias. That is the point of the exercise as much as the predictions themselves: regularization helps when the predictor count is large relative to the sample, and this is a case where it mostly is not.</p>
+
+  <div class="attachments">
+    <h2>Links &amp; Attachments</h2>
+    <ul>
+      <li class="soon">Code (R Markdown) &mdash; coming soon</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

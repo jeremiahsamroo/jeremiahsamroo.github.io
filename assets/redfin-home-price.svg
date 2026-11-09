@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f5f8ff"/>
+  <!-- bars: median price by zip-code group, Very Low -> Very High -->
+  <rect x="120" y="640" width="150" height="140" rx="10" fill="#c7d6fb"/>
+  <rect x="310" y="580" width="150" height="200" rx="10" fill="#a9c2f9"/>
+  <rect x="500" y="500" width="150" height="280" rx="10" fill="#7ea3f6"/>
+  <rect x="690" y="420" width="150" height="360" rx="10" fill="#4f7ef2"/>
+  <rect x="880" y="320" width="150" height="460" rx="10" fill="#1d4ed8"/>
+  <line x1="90" y1="780" x2="1110" y2="780" stroke="#c9d2e0" stroke-width="6" stroke-linecap="round"/>
+  <!-- log-price trend line -->
+  <polyline points="195,620 385,555 575,470 765,390 955,300" fill="none" stroke="#e07b39" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="955" cy="300" r="14" fill="#e07b39"/>
+  <text x="90" y="140" font-family="system-ui, sans-serif" font-size="34" fill="#33415c">Median price by zip-code group</text>
+  <text x="120" y="842" font-family="system-ui, sans-serif" font-size="28" fill="#8a94a6">King County home sales, 2014–2015</text>
+</svg>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CYK chart parser for context-free grammars — Jeremiah Romagnoli</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231d4ed8'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='system-ui,sans-serif' font-weight='600'>JR</text></svg>">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="simple-page">
+  <div class="topbar">
+    <a class="brand" href="../index.html">Jeremiah Romagnoli</a>
+    <nav>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../cv.html">CV</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+
+  <img class="project-hero" src="../assets/cyk-chart-parser.svg" alt="Chart preview: a parse tree for S -> NP VP">
+
+  <h1>CYK chart parser for context-free grammars</h1>
+  <p class="meta">Princeton NLP coursework &middot; Python &middot; 2026</p>
+
+  <p>This project implements a CKY/CYK chart parser for a context-free grammar from scratch in Python. The grammar is a ~35-production toy English fragment (S, NP, VP, PP, NBar, Det, Adj, N, V, Prep, COMP, CONJ). The parser first converts the grammar to Chomsky Normal Form, binarizing long rules with intermediate X-symbols, then fills the chart bottom-up &mdash; terminals on the diagonal with unary closure, binary rule combinations for longer spans &mdash; storing backpointers in every cell so full parse trees can be recovered. When no full parse exists, it recovers the longest well-formed span instead of failing silently.</p>
+
+  <p>On the 10-sentence test set it fully parses 7 sentences. For the other 3, the partial-parse recovery is the honest result: for the unparseable &ldquo;LIGHT GREEN CARS FLY&rdquo;, for example, it returns the longest well-formed span, the noun phrase &ldquo;green cars&rdquo;.</p>
+
+  <p>The second half of the project is diagnosing and repairing the grammar itself. The original grammar over-generated: it accepted &ldquo;The car fly&rdquo; (a subject&ndash;verb agreement violation), &ldquo;The truck hit the baby the car&rdquo; (a transitive verb given two objects), and &ldquo;The man put the baby&rdquo; (a ditransitive verb missing its prepositional-phrase argument). The fix subcategorizes verbs by valency &mdash; intransitive, transitive, ditransitive, trivalent &mdash; and rewrites the verb-phrase rules accordingly, with plural noun and verb-phrase rules added, so the revised grammar correctly rejects all three ungrammatical sentences. One honest caveat: the agreement fix is partial. Full singular/plural labeling of every noun and verb rule was not implemented; the plural rules suffice for the test set at hand.</p>
+
+  <div class="attachments">
+    <h2>Links &amp; Attachments</h2>
+    <ul>
+      <li class="soon">Code (Jupyter notebook) &mdash; coming soon</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

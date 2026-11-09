@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f5f8ff"/>
+  <!-- embedding clusters drifting over time -->
+  <g fill="#1d4ed8">
+    <circle cx="300" cy="300" r="16"/><circle cx="350" cy="360" r="12"/><circle cx="270" cy="380" r="12"/>
+    <circle cx="320" cy="260" r="10"/><circle cx="390" cy="310" r="14"/><circle cx="250" cy="320" r="9"/>
+  </g>
+  <g fill="#e07b39">
+    <circle cx="700" cy="480" r="16"/><circle cx="760" cy="540" r="12"/><circle cx="670" cy="560" r="12"/>
+    <circle cx="720" cy="440" r="10"/><circle cx="790" cy="490" r="14"/><circle cx="650" cy="500" r="9"/>
+  </g>
+  <g fill="#8a94a6">
+    <circle cx="950" cy="280" r="14"/><circle cx="1010" cy="330" r="11"/><circle cx="920" cy="350" r="11"/>
+    <circle cx="990" cy="250" r="9"/><circle cx="1040" cy="300" r="12"/>
+  </g>
+  <!-- drift arrow -->
+  <path d="M 420 340 C 520 420, 560 460, 640 480" fill="none" stroke="#33415c" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 14"/>
+  <path d="M 640 480 l -26 -4 l 12 24 z" fill="#33415c"/>
+  <text x="90" y="140" font-family="system-ui, sans-serif" font-size="34" fill="#33415c">Embedding neighborhoods over time</text>
+  <text x="120" y="842" font-family="system-ui, sans-serif" font-size="28" fill="#8a94a6">Cosine &amp; Jaccard similarity &#183; k-means</text>
+</svg>

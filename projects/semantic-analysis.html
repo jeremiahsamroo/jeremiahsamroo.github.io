@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semantic analysis of politically charged words in news corpora — Jeremiah Romagnoli</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231d4ed8'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='system-ui,sans-serif' font-weight='600'>JR</text></svg>">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="simple-page">
+  <div class="topbar">
+    <a class="brand" href="../index.html">Jeremiah Romagnoli</a>
+    <nav>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../cv.html">CV</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+
+  <img class="project-hero" src="../assets/semantic-analysis.svg" alt="Chart preview: word-embedding clusters drifting over time">
+
+  <h1>Semantic analysis of politically charged words in news corpora</h1>
+  <p class="meta">Princeton University &middot; Python &middot; 2026</p>
+
+  <p>Words do not change their dictionary definitions overnight, but the company they keep in the news does &mdash; and that drift is measurable. This project scrapes news corpora, parses and vectorizes the text in Python, and tracks how the meanings of politically charged terms shift over time through the movement of their embedding neighborhoods.</p>
+
+  <p>The method combines three lenses on the same question. Word embeddings give each term a position in a high-dimensional space; k-means clustering groups the neighborhood around it; and cosine and Jaccard similarity quantify how far that neighborhood has moved between periods. The shifts themselves are latent &mdash; they are not observed directly, but inferred from how a word&rsquo;s embedding neighborhood moves &mdash; so the analysis is built around measuring the movement rather than asserting a new definition for any term.</p>
+
+  <div class="attachments">
+    <h2>Links &amp; Attachments</h2>
+    <ul>
+      <li class="soon">Writeup &amp; code &mdash; coming soon</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
